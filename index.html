@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    #snackbar {
+      visibility: hidden;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+    }
+
+    #snackbar.show {
+      visibility: visible !important;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s !important;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s !important;
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contact1" onclick="openContact(1)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/male-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name1">Yağız Günday</h1>
+      <h2 id="email1"><i class="fa fa-envelope"></i> yagizday@gmail.com</h2>
+      <p id="phone1"><i class="fa fa-phone"></i> +90 (551) 493 27 75</p>
+      <p id="mobile1"><i class="fa fa-mobile"></i>+90-505-554-3663 </p>
+    </div>
+  </div>
+  <div id="contact2" onclick="openContact(2)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/male-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name2">Yağız Aclan</h1>
+      <h2 id="email2"><i class="fa fa-envelope"></i> yagizan@gmail.com</h2>
+      <p id="phone2" id="phone"><i class="fa fa-phone"></i> +90-505-556-9284</p>
+      <p id="mobile2"><i class="fa fa-mobile"></i> +90-555-550-9429 </p>
+    </div>
+  </div>
+  <div id="contact3" onclick="openContact(3)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name3">Esma Kurutluoğlu</h1>
+      <h2 id="email3"><i class="fa fa-envelope"></i> esmakglu@gmail.com</h2>
+      <p id="phone3"><i class="fa fa-phone"></i> +90-505-557-5218</p>
+      <p id="mobile3"><i class="fa fa-mobile"></i> +90-505-556-2353 </p>
+    </div>
+  </div>
+  <div id="contact4" onclick="openContact(4)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name4">İrem Aybar</h1>
+      <h2 id="email4"><i class="fa fa-envelope"></i> iremayar@gmail.com</h2>
+      <p id="phone4"><i class="fa fa-phone"></i> +90-545-552-2156 </p>
+      <p id="mobile4"><i class="fa fa-mobile"></i> +90-505-557-2459 </p>
+    </div>
+  </div>
+  <div id="contact5" onclick="openContact(5)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name5">İrem Sezek</h1>
+      <h2 id="email5"><i class="fa fa-envelope"></i> iremszek@gmail.com</h2>
+      <p id="phone5"><i class="fa fa-phone"></i> +90-535-552-5923</p>
+      <p id="mobile5"><i class="fa fa-mobile"></i>+90-535-555-6934 </p>
+    </div>
+  </div>
+  <div id="contact6" onclick="openContact(6)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name6">Esma Tazegül</h1>
+      <h2 id="email6"><i class="fa fa-envelope"></i> dresmaul@gmail.com</h2>
+      <p id="phone6"><i class="fa fa-phone"></i> +90-505-558-4695 </p>
+      <p id="mobile6"><i class="fa fa-mobile"></i> +90-505-552-9395 </p>
+    </div>
+  </div>
+  <div id="contact7" onclick="openContact(7)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name7">Meriç Arıcan</h1>
+      <h2 id="email7"><i class="fa fa-envelope"></i> mericcan@gmail.com</h2>
+      <p id="phone7"><i class="fa fa-phone"></i> +90-555-553-7858</p>
+      <p id="mobile7"><i class="fa fa-mobile"></i> +90-505-553-5228 </p>
+    </div>
+  </div>
+  <div id="contact8" onclick="openContact(8)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/male-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name8">Ümran Eliçin</h1>
+      <h2 id="email8"><i class="fa fa-envelope"></i> umrain@gmail.com</h2>
+      <p id="phone8"><i class="fa fa-phone"></i> +90 (551) 493 27 75</p>
+      <p id="mobile8"><i class="fa fa-mobile"></i> +90-505-557-2039 </p>
+    </div>
+  </div>
+  <div id="contact9" onclick="openContact(9)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name9">Ada Körmükçü</h1>
+      <h2 id="email9"><i class="fa fa-envelope"></i> adakocu@gmail.com</h2>
+      <p id="phone9"><i class="fa fa-phone"></i> +90-535-555-0192 </p>
+      <p id="mobile9"><i class="fa fa-mobile"></i> +90-555-552-2936 </p>
+    </div>
+  </div>
+  <div id="contact10" onclick="openContact(10)" class="contact-card">
+    <div class="meta">
+      <div class="photo"
+        style="background-image: url(https://www.random-name-generator.com/images/female-silhouette.png)"></div>
+
+    </div>
+    <div class="description">
+      <h1 id="name10">Emel Öztuna</h1>
+      <h2 id="email10"><i class="fa fa-envelope"></i> emelozuna@gmail.com</h2>
+      <p id="phone10"><i class="fa fa-phone"></i> +90-535-559-7076 </p>
+      <p id="mobile10"><i class="fa fa-mobile"></i> +90-505-558-6355 </p>
+    </div>
+  </div>
+  <div class="contact-card">
+
+
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+
+          <header class="w3-container">
+            <h1 id="name">Some text. Some text. Some text.</h1>
+            <hr />
+          </header>
+          <div class="w3-card no-shadow">
+            <img class="center" src="https://www.random-name-generator.com/images/female-silhouette.png" alt="Alps">
+            <div class="w3-container w3-center">
+              <hr />
+              <h3 id="email"></h3>
+              <i class="fa fa-phone"></i><span id="phone"></span>
+              <br />
+              <i class="fa fa-mobile"></i> <span id="mobile"></span>
+            </div>
+          </div>
+        </div>
+        <footer class="w3-container">
+          <div class="display-end">
+            <a onclick="showSnackbar(1)" class="button1" style="background-color:#f14e4e">Sil</a>
+            <a onclick="document.getElementById('id02').style.display = 'block'" class="button1"
+              style="background-color:#9a4ef1">Düzenle</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="id02" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id02').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+
+          <header class="w3-container">
+            <h1 id="name">Kişiyi düzenle</h1>
+            <hr />
+          </header>
+          <div class="w3-card no-shadow">
+            <div class="w3-container w3-center">
+              <div class="update-form">
+                <form action="" method="post">
+                  <label for="field1"><span>İsim <span class="required"></span></span><input type="text"
+                      class="input-field" name="field1" value="" /></label>
+                  <label for="field2"><span>Email <span class="required"></span></span><input type="text"
+                      class="input-field" name="field2" value="" /></label>
+                  <label><span>Telefon</span><input type="text" class="tel-number-field" name="tel_no_1" value=""
+                      maxlength="4" />-<input type="text" class="tel-number-field" name="tel_no_2" value=""
+                      maxlength="4" />-<input type="text" class="tel-number-field" name="tel_no_3" value=""
+                      maxlength="4" /></label>
+                  <label><span>Cep Telefonu</span><input type="text" class="tel-number-field" name="tel_no_4" value=""
+                      maxlength="3" />-<input type="text" class="tel-number-field" name="tel_no_5" value=""
+                      maxlength="3" />-<input type="text" class="tel-number-field" name="tel_no_6 value="" maxlength="
+                      4" /></label>
+                  <label for="field4"><span>Sosyal Grup</span><select name="field4" class="select-field">
+                      <option value="General Question">Aile</option>
+                      <option value="Advertise">İş</option>
+                      <option value="Partnership">Kişisel</option>
+                    </select></label>
+                  <label for="field5"><span>Notlar <span class="required">*</span></span><textarea name="field5"
+                      class="textarea-field"></textarea></label>
+                  <label class="container">Favorilere Ekle
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Blokla
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+          <footer class="w3-container">
+            <div class="display-end">
+              <a onclick="document.getElementById('id02').style.display='none'" class="button1"
+                style="background-color:#f14e4e">İptal</a>
+              <a onclick="showSnackbar(2)" class="button1" style="background-color:#9a4ef1">Kaydet</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="snackbar">Mesaj Placeholder</div>
+
+    <script>
+      function openContact(x) {
+        var name = document.getElementById("name" + x);
+        var phone = document.getElementById("phone" + x);
+        var mobile = document.getElementById("mobile" + x);
+        var email = document.getElementById("email" + x);
+        document.getElementById("mobile").innerText = mobile.innerText;
+        document.getElementById("phone").innerText = phone.innerText;
+        document.getElementById("name").innerText = name.innerText;
+        document.getElementById("email").innerText = email.innerText;
+        document.getElementById('id01').style.display = 'block';
+        ;
+      }
+      function showSnackbar(status) {
+        var x = document.getElementById("snackbar");
+        if (status === 1) {
+          x.innerText = 'Kişi siliniyor...'
+          x.className = "show";
+          setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+          document.getElementById('id01').style.display = 'none'
+
+        } else if (status === 2) {
+          x.innerText = 'Kişi güncelleniyor...'
+          x.className = "show";
+          setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+          document.getElementById('id01').style.display = 'none'
+          document.getElementById('id02').style.display = 'none'
+
+        } else {
+          x.innerText = 'İşlem yapılıyor...'
+          x.className = "show";
+          setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+      }
+      function openEditModal() {
+        document.getElementById('id01').style.display = 'none';
+        document.getElementById('id02').style.display = 'block';
+      }
+    </script>
+
+</body>
+
+</html>
